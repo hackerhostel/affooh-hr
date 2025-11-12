@@ -25,7 +25,7 @@ const ObjectivesAndKPIsLayout = () => {
 
     <>
     <MainPageLayout
-      title="Objectives And KPIs"
+      title="Objectives And "
       subText="Add new"
       leftColumn={
         <ObjectivesAndKPIsListPage
