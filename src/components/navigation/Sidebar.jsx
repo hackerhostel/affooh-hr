@@ -98,9 +98,9 @@ function Sidebar() {
             <MenuItem link="/training" Icon={AcademicCapIcon}/>
             {/* <MenuItem link="/operations" Icon={ArrowPathIcon}/>
             <MenuItem link="/sprints" Icon={CalendarIcon}/>    */}
-            {/* <MenuItem link="/test-plans" Icon={TableCellsIcon}/>  
+            <MenuItem link="/test-plans" Icon={TableCellsIcon}/>  
              <MenuItem link="/projects" Icon={Square3Stack3DIcon}/>
-            <MenuItem link="/profile" Icon={UsersIcon}/> */}
+            <MenuItem link="/profile" Icon={UsersIcon}/>
             
             <div className="flex flex-col items-center ">
               {!loading ? (
