@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainPageLayout from "../../layouts/MainPageLayout.jsx";
 import TrainingPlansListPage from "./TrainingPlansListPage.jsx";
 import TrainingPlansContentPage from "./TrainingPlansContent.jsx";
+import CreateNewTrainingPlan from "./CreateNewTrainingPlan.jsx";
 
 const TrainingPlansLayout = () => {
   const [selectedFolderId, setSelectedFolderId] = useState(null);
@@ -21,8 +22,10 @@ const TrainingPlansLayout = () => {
   };
 
   return (
+   <>
     <MainPageLayout
       title="Training Plans"
+      subText={"Add New"}
       leftColumn={
         <TrainingPlansListPage
           selectedFolderId={selectedFolderId}
@@ -33,6 +36,9 @@ const TrainingPlansLayout = () => {
       rightColumn={<TrainingPlansContentPage selectedDocument={selectedDocument} />}
       onAction={onAddNew}
     />
+
+    <CreateNewTrainingPlan onClose={handleClose} isOpen={isOpen}/>
+   </>
   );
 };
 
