@@ -35,8 +35,9 @@ function Sidebar() {
   const handleSignOut = async () => {
     setLoading(true);
     try {
-      await signOut({ global: true });
-      window.location.reload();
+      await signOut({global: true});
+    } catch (err) {
+      console.error("Logout failed", err);
     } finally {
       setLoading(false);
     }
