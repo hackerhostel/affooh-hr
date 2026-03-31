@@ -35,19 +35,9 @@ function Sidebar() {
   const handleSignOut = async () => {
     setLoading(true);
     try {
-      // Broadcast logout to all open tabs of same-origin apps
-      const logoutChannel = new BroadcastChannel("affooh_logout");
-      logoutChannel.postMessage({ type: "LOGOUT" });
-      logoutChannel.close();
-
-      // signOut({ global: true }) invalidates all Cognito tokens server-side
-      // and redirects to the configured redirectSignOut URL (/logout)
-      await signOut({ global: true });
+      await signOut({global: true});
     } catch (err) {
       console.error("Logout failed", err);
-      localStorage.clear();
-      sessionStorage.clear();
-      window.location.replace("/login");
     } finally {
       setLoading(false);
     }
